@@ -1,0 +1,30 @@
+[project]
+name = "campaign-agent"
+version = "0.1.0"
+description = "Campaign Orchestrator Agent — takes a strategy brief and produces channel-ready draft assets, UTMs, and a structured campaign plan."
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=0.4.0",
+    "langchain-anthropic>=0.3.0",
+    "langchain-core>=0.3.0",
+    "anthropic>=0.42.0",
+    "streamlit>=1.40.0",
+    "python-slugify>=8.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+]
+
+[tool.setuptools]
+py-modules = ["models", "graph", "app"]
+
+[tool.setuptools.packages.find]
+include = ["agents*", "utils*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

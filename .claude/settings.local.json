@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m venv .venv)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(pip install:*)",
+      "Bash(python -c \":*)",
+      "Bash(source /Users/GriffinKemp/CampaignAgent/.venv/bin/activate)",
+      "Bash(pkill -f \"streamlit run app.py\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python -c \"import py_compile; py_compile.compile\\(''app.py'', doraise=True\\); py_compile.compile\\(''graph.py'', doraise=True\\); py_compile.compile\\(''models.py'', doraise=True\\); py_compile.compile\\(''agents/strategy_parser.py'', doraise=True\\); py_compile.compile\\(''agents/campaign_planner.py'', doraise=True\\); print\\(''All files compile OK''\\)\")",
+      "Bash(brew list:*)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "sources": ["linkedin", "email", "blog", "google"],
+  "mediums": {
+    "linkedin": ["social", "paid-social"],
+    "email": ["email"],
+    "blog": ["organic"],
+    "google": ["cpc", "organic"]
+  },
+  "content_naming": {
+    "email": "nurture-email-{position}",
+    "linkedin_organic": "organic-post-{position}",
+    "linkedin_ad": "ad-variant-{variant}",
+    "blog": "blog-{slug}"
+  }
+}

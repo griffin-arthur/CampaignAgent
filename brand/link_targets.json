@@ -1,0 +1,11 @@
+{
+  "primary_links": {
+    "book_demo": "https://www.arthur.ai/book-demo",
+    "adg_product": "https://www.arthur.ai/blog/adg",
+    "shadow_agent_crisis": "https://www.arthur.ai/column/shadow-agent-crisis-why-you-need-agent-discovery-and-governance-in-2026",
+    "aws_gcp_integration": "https://www.arthur.ai/column/implement-agent-discovery-governance-with-native-integration-with-aws-gcp",
+    "agent_explosion_webinar": "https://www.arthur.ai/blog/the-agent-explosion-is-here-key-webinar-takeaways"
+  },
+  "homepage": "https://www.arthur.ai",
+  "blog_index": "https://www.arthur.ai/blog"
+}
