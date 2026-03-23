@@ -459,7 +459,7 @@ def create_app(checkpointer=None):
             from langgraph.checkpoint.postgres import PostgresSaver
             import psycopg
 
-            conn = psycopg.connect(db_url)
+            conn = psycopg.connect(db_url, autocommit=True)
             checkpointer = PostgresSaver(conn)
             checkpointer.setup()
         else:
