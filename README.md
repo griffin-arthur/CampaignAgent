@@ -2,7 +2,7 @@
 
 A multi-agent orchestration system that transforms a single campaign strategy brief into a complete set of channel-ready marketing assets — email sequences, LinkedIn posts & ads, blog drafts — with deterministic UTM tracking and structured task plans.
 
-Built with LangGraph, Claude Opus 4, and Streamlit. Designed for human-in-the-loop workflows where the agent drafts and humans approve.
+Built with LangGraph, Claude Opus 4.6, and Streamlit. Designed for human-in-the-loop workflows where the agent drafts and humans approve.
 
 ---
 
@@ -66,7 +66,7 @@ Writer  Writer   Writer
 | Layer | Technology |
 |-------|-----------|
 | Orchestration | [LangGraph](https://github.com/langchain-ai/langgraph) — stateful multi-agent workflows with checkpoints |
-| LLM | Claude Opus 4 via [Anthropic API](https://docs.anthropic.com) |
+| LLM | Claude Opus 4.6 via [Anthropic API](https://docs.anthropic.com) |
 | Interface | [Streamlit](https://streamlit.io) |
 | State | LangGraph MemorySaver (dev) / Postgres-ready (prod) |
 | UTMs | Custom Python module (`utils/utm.py`) |
@@ -157,11 +157,11 @@ The app will open at `http://localhost:8501`.
 
 | Agent | Model | Temp | Purpose |
 |-------|-------|------|---------|
-| Strategy Parser | Claude Opus 4 | 0.0 | Extract structured data from unstructured brief |
-| Campaign Planner | Claude Opus 4 | 0.0 | Generate channel plan, compute UTMs, build task timeline |
-| Email Writer | Claude Opus 4 | 0.7 | Draft 3-part email nurture sequence with A/B subject lines |
-| Social Writer | Claude Opus 4 | 0.7 | Draft 4 organic LinkedIn posts + 2 sponsored ad variants |
-| Blog Writer | Claude Opus 4 | 0.7 | Draft SEO-optimized anchor blog post (1,500–2,000 words) |
+| Strategy Parser | Claude Opus 4.6 | 0.0 | Extract structured data from unstructured brief |
+| Campaign Planner | Claude Opus 4.6 | 0.0 | Generate channel plan, compute UTMs, build task timeline |
+| Email Writer | Claude Opus 4.6 | 0.7 | Draft 3-part email nurture sequence with A/B subject lines |
+| Social Writer | Claude Opus 4.6 | 0.7 | Draft 4 organic LinkedIn posts + 2 sponsored ad variants |
+| Blog Writer | Claude Opus 4.6 | 0.7 | Draft SEO-optimized anchor blog post (1,500–2,000 words) |
 | Output Assembler | None (logic only) | — | Format and package all approved assets |
 
 ---

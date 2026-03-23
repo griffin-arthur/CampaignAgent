@@ -40,7 +40,7 @@ Rules:
 
 def parse_strategy(state: CampaignState) -> dict:
     """Parse raw brief into structured strategy. Returns state update dict."""
-    llm = ChatAnthropic(model="claude-opus-4-20250514", max_tokens=4096, temperature=0)
+    llm = ChatAnthropic(model="claude-opus-4-6-20250620", max_tokens=4096, temperature=0)
 
     human_content = f"Parse the following campaign brief:\n\n{state.raw_brief}"
 

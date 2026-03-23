@@ -85,7 +85,7 @@ def write_blog(state: CampaignState) -> dict:
             for fb in blog_feedback:
                 feedback_section += f"- {fb.feedback}\n"
 
-    llm = ChatAnthropic(model="claude-opus-4-20250514", max_tokens=8192, temperature=0.7)
+    llm = ChatAnthropic(model="claude-opus-4-6-20250620", max_tokens=8192, temperature=0.7)
 
     messages = [
         SystemMessage(content=system_prompt),
