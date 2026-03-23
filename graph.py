@@ -4,6 +4,8 @@ import json
 import operator
 from typing import Annotated, Any
 
+import os
+
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import StateGraph, END
 from langgraph.types import interrupt, Command
@@ -447,9 +449,21 @@ def build_graph() -> StateGraph:
 
 
 def create_app(checkpointer=None):
-    """Create the compiled LangGraph app with checkpointing."""
+    """Create the compiled LangGraph app with checkpointing.
+
+    Uses PostgresSaver if DATABASE_URL is set, otherwise falls back to MemorySaver.
+    """
     if checkpointer is None:
-        checkpointer = MemorySaver()
+        db_url = os.environ.get("DATABASE_URL")
+        if db_url:
+            from langgraph.checkpoint.postgres import PostgresSaver
+            import psycopg
+
+            conn = psycopg.connect(db_url)
+            checkpointer = PostgresSaver(conn)
+            checkpointer.setup()
+        else:
+            checkpointer = MemorySaver()
 
     graph = build_graph()
     return graph.compile(checkpointer=checkpointer)
