@@ -6,6 +6,9 @@ import uuid
 from dotenv import load_dotenv
 load_dotenv()
 
+from utils.tracing import setup_arthur_tracing
+setup_arthur_tracing()
+
 import streamlit as st
 
 from models import (
