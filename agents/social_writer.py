@@ -95,7 +95,7 @@ def write_social(state: CampaignState) -> dict:
                 else:
                     feedback_section += f"- All social content: {fb.feedback}\n"
 
-    llm = ChatAnthropic(model="claude-opus-4-6-20250620", max_tokens=8192, temperature=0.7)
+    llm = ChatAnthropic(model="claude-opus-4-6", max_tokens=8192, temperature=0.7)
 
     messages = [
         SystemMessage(content=system_prompt),

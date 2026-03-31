@@ -53,7 +53,7 @@ scheduling, UTM setup, list segmentation, campaign tracking setup.
 
 def plan_campaign(state: CampaignState) -> dict:
     """Generate channel plan with UTM matrix and task breakdown."""
-    llm = ChatAnthropic(model="claude-opus-4-6-20250620", max_tokens=4096, temperature=0)
+    llm = ChatAnthropic(model="claude-opus-4-6", max_tokens=4096, temperature=0)
 
     strategy_json = state.parsed_strategy.model_dump_json(indent=2)
 
